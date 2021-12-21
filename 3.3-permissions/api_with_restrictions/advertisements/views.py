@@ -21,7 +21,7 @@ class AdvertisementViewSet(ModelViewSet):
         """Получение прав для действий."""
         if self.action in ["create"]:
             permission_classes = [IsAuthenticated]
-        elif self.action in ["update", "partial update", "destroy"]:
+        elif self.action in ["update", "partial_update", "destroy"]:
             permission_classes = [IsOwnerOrReadOnly]
         else:
             permission_classes = [AllowAny]
